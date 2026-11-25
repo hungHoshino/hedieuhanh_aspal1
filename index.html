@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <style >
+        body{
+            background: rgb(6, 1, 1);
+            text-align: center;
+           
+            font-family: 'Poppins', sans-serif;
+
+        }
+        .background{
+            width:100%;
+            height:100%;
+
+            
+            border-radius: 10px;
+            overflow: hidden;
+            
+        }
+        .background  img{
+            width:100%;
+            height:100vh;
+            z-index: -1;
+            position: relative;
+           
+        }
+        .screen{
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height:100vh;
+            position: absolute;
+            overflow: hidden;
+
+        }
+        .card_search{
+            width:140px;
+            height:50px;
+            display: flex;
+            background: rgba(6, 3, 3, 0.5);
+            margin-top: -65px;
+            position: absolute;
+            margin-left: 500px;
+            border-radius: 50px;
+            box-shadow: rgba(36, 209, 240, 0.5) 0 5px 20px;
+        }
+        .btn_tasbar{
+            width:40px;
+            height:40px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(150deg, rgba(4, 48, 242, 0.504), rgb(175, 3, 233));
+            margin-top: 5px;
+            margin-left: 10px;
+            transition: 0.2s;
+            display: flex;
+            text-align: center;
+
+        
+        }
+        .btn_tasbar i{
+            color:white;
+            font-size: 20px;
+            margin-top: 9px;
+            margin-left: 4px;
+
+        }
+        .btn_tasbar:hover{
+            background: white;
+
+        }
+        .btn_tasbar:hover i{
+            color:black;
+        }
+        .card_tasbar_body{
+            width:700px;
+            height:560px;
+            background: white;
+            border-radius: 20px;
+            margin-left: -100px;
+            margin-top: 20px;
+            box-shadow: rgb(17, 219, 255) 3px 10px 15px;
+            background: rgba(0 , 0, 0, 0.3);
+            color:white;
+            transition: 0.4s all ease;
+
+        }
+        .user_logo{
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            background: white;
+            color:black;
+            margin-left: 110px;
+            box-shadow: rgb(246, 238, 15) 0 5px 15px;
+            
+
+        }
+        .user_logo i{
+            background: linear-gradient(150deg, rgb(246, 238, 15), rgb(255, 3, 247), rgb(10, 121, 231));
+            font-size: 50px;
+            border-radius: 50%;
+            color:white;
+            width:60px;
+            height:60px;
+            margin-top: 20px;
+        }
+        .user_logo h2{
+            color:white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-left: -30px;
+        }
+        .input_search{
+            width:300px;
+            height:30px;
+            margin-top:40px;
+
+        }
+        .input_search_body{
+            width:260px;
+            height:30px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            margin-left: 20px;
+            box-shadow: rgb(10, 121, 231) 0 2px 15px;
+            font-size: 20px;
+        }
+        .input_search i{
+            font-size: 20px;
+            top:0;
+            left:0;
+            margin-top: -26px;
+            display: flex;
+            margin-left: 5px;
+
+        }
+        .system{
+            width:300px;
+            height:360px;
+            background: rgba(138, 124, 124, 0.3);
+            border-radius: 10px;
+            margin-left: 10px;
+            color:white;
+
+        }
+        .system h2{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-left: 10px;
+            display: flex;
+
+        }
+        .setting{
+            width:95%;
+            height:40px;
+            display: flex;
+
+            margin-left: 6px;
+            border-radius: 5px;
+
+        }
+        .setting:hover{
+            background: rgba(0 , 0, 0, 0.3);
+        }
+        .setting i{
+            font-size: 35px;
+            margin-top: 5px;
+            margin-left: 30px;
+            color:grey;
+        }
+        .setting p{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top:14px;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+        .file{
+            width:95%;
+            height:40px;
+            display: flex;
+            margin-top: 10px;
+
+            margin-left: 6px;
+            border-radius: 5px;
+        }
+        .file:hover{
+            background: rgba(0 , 0, 0, 0.3);
+        }
+        .file i{
+            font-size: 35px;
+            margin-top: 5px;
+            margin-left: 30px;
+            color:rgb(175, 200, 218);
+        }
+        .file p{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top:14px;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+        .card_opitions{
+            width:300px;
+            height:150px;
+            background: rgba(223, 215, 215, 0.6);
+            display: flex;
+            margin-top: -540px;
+            margin-left: 330px;
+            border-radius: 20px;
+            box-shadow:rgb(175, 3, 233) 0 5px 15px; 
+
+    
+        }
+        .document i{
+            font-size: 60px;
+            color:rgb(62, 34, 34);
+            margin-top: 10px;
+
+        }
+        .document p{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: -11px;
+            color:black;
+
+        }
+        .document{
+            width:80px;
+            height:80px;
+            
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 20px;
+            border-radius: 10px;
+        }
+        .document:hover{
+            background: rgba(227, 230, 232, 0.8);
+        }
+        .Picture{
+            width:80px;
+            height:80px;
+           
+            
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 110px;
+            border-radius: 10px;
+        }
+        .Picture:hover{
+             background: rgba(227, 230, 232, 0.8);
+        }
+        .Picture i{
+            font-size: 60px;
+            color:rgb(10, 236, 236);
+            margin-top: 10px;
+        }
+        .Picture p{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: -11px;
+            color:black;
+        }
+        .music{
+            width:80px;
+            height:80px;
+            
+           
+            
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 200px;
+            border-radius: 10px;
+        }
+        .music:hover{
+            background: rgba(227, 230, 232, 0.8);
+        }
+        .music i{
+            font-size: 60px;
+            color:rgb(201, 18, 238);
+            margin-top: 10px;
+        }
+        .music p{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: -11px;
+            color:black;
+        }
+        .timer_clock{
+            margin-top: 40px;
+            font-size: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-left: 270px;
+        }
+        .date_clock{
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-left: 250px;
+        }
+       .card_tasbar_body.hide{
+        margin-top: -90px;
+        visibility: hidden;
+        opacity: 0;
+       }
+       .card_search_main{
+        width:300px;
+        height:40px;
+        
+        display: flex;
+        border-radius: 20px;
+        margin-left: -520px;
+        margin-top: 5px;
+       }
+       .btn_search_main{
+        width:40px;
+        height:40px;
+        border-radius: 10px;
+        border: none;
+        background: linear-gradient(150deg, rgb(249, 19, 15), rgb(199, 238, 6), rgb(9, 220, 41));
+        transition: 0.2s;
+       }
+       .btn_search_main:hover{
+        background: white;
+
+       }
+       .btn_search_main i{
+        font-size: 20px;
+      
+       }
+       .icon_card_body img{
+        width:40px;
+        height:40px;
+       }
+       .inp_search_main{
+        width:400px;
+        height:30px;
+        margin-top: 2px;
+        border-radius: 20px;
+        box-shadow: rgba(10, 236, 236) 0 2px 15px ;
+        outline: none;
+        background: black;
+        color:white;
+        border: none;
+        transition: 0.6s all ease;
+
+       }
+       .inp_search_main.hide1{
+        width:0px;
+       }
+       .icon_color_background{
+        width:42px;
+        height:42px;
+        
+        margin-left: 820px;
+        margin-top: 5px;
+
+       }
+       .btn_icon_color{
+        width: 100%;
+        height:100%;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        background: linear-gradient(140deg, rgb(19, 16, 16),rgb(66, 35, 35), rgb(232, 221, 221));
+        transform: 0.2s;
+
+
+
+       }
+       .btn_icon_color:hover{
+         background: #ccc;
+       }
+       .btn_icon_color i{
+        color:white;
+        font-size: 20px;
+       }
+       .icon_card_body{
+        width:250px;
+        height:50px;
+        background: rgba(19, 16, 16, 0.4);
+        border-radius:20px ;
+        margin-top: -45px;
+        margin-left: 60px;
+        box-shadow: rgb(10, 236, 236) 0 3px 15px;
+        transition: 0.3s all ease;
+        display: flex;
+       }
+       .img1{
+        width:50px;
+        height:50px;
+        border-radius: 10px;
+        margin-left: 20px;
+        background: rgba(19, 16, 16, 0.1);
+        
+
+       }
+       .img1 img{
+        width:100%;
+        height:100%;
+        transition: 0.6s;
+
+       }
+       .img1:hover img{
+        width:300px;
+        height:300px;
+        margin-top: 60px;
+       }
+       .img1.max img{
+        width:1500px;
+        height:100vh;
+        margin-left: -100px;
+        margin-top: -40px;
+        position: relative;
+        z-index: -1;
+
+       }
+       .icon_card_body.hide_icon{
+        
+        visibility: hidden;
+        opacity: 0;
+        margin-left: -120px;
+       }
+       .img2{
+        width:50px;
+        height:50px;
+        border-radius: 10px;
+        margin-left:20px;
+        background: rgba(19, 16, 16, 0.1);
+        
+        
+       }
+       .img2 img{
+        width:100%;
+        height:100%;
+        transition: 0.6s;
+
+       }
+       .img2:hover img{
+        width:400px;
+        height:400px;
+        margin-top: 100px;
+        margin-left: 100px;
+       }
+       .icon_color_background.left{
+        margin-left: -860px;
+       }
+       .img2.max2 img{
+        width:1700px;
+        height:100vh;
+        margin-top: -40px;
+        position: relative;
+        z-index: -1;
+        margin-left: -180px;
+
+       }
+       .btn_open{
+        width:100px;
+        height:60px;
+        
+        position: relative;
+        z-index: 2;
+        margin-top: -590px;
+        margin-left: 40px;
+        border-radius: 50px;
+       }
+       .btn_open_app{
+        width:100%;
+        height: 100%;
+        border-radius: 50px;
+        background: rgba(19, 16, 16, 0.6);
+        border: none;
+
+       }
+       .btn_open_app h1{
+        color:white;
+        font-size: 50px;
+        margin-top: -10px;
+       }
+       .btn_open_app:hover{
+        background: rgba(211, 220, 220, 0.2);
+       }
+       .body_app{
+        width:300px;
+        height:400px;
+        z-index: 2;
+        background: rgba(66, 63, 63, 0.6);
+        box-shadow: rgb(10, 236, 236) 0 4px 14px;
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+        position: relative;
+        transition: all 0.4s ease;
+        overflow: hidden;
+        
+
+
+        
+        
+
+
+       }
+       .this_pc{
+        width:70px;
+        height:70px;
+        background: rgba(138, 124, 124, 0.3);
+        border-radius: 10px ;
+        margin-left: 20px;
+        display: flex;
+        margin-top: 20px;
+        box-shadow: rgb(199, 205, 208) 0 3px 14px;
+
+       }
+       .this_pc img{
+        width:60px;
+        height:60px;
+        margin-left: 5px;
+       }
+       .this_pc p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -48px;
+        margin-top:54px;
+        font-size: 12px;
+        color:white;
+
+       }
+       .this_pc:hover{
+        background: rgb(199, 205, 208, 0.2);
+       }
+       .bin{
+        width:70px;
+        height:70px;
+        background: rgba(138, 124, 124, 0.3);
+        border-radius: 10px ;
+        margin-left: 20px;
+        display: flex;
+        margin-top: 20px;
+        box-shadow: rgb(199, 205, 208) 0 3px 14px;
+       }
+       .bin img{
+        width:60px;
+        height:60px;
+        margin-left:6px;
+       }
+       .bin p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -58px;
+        margin-top:54px;
+        font-size: 12px;
+        color:white;
+       }
+       .bin:hover{
+        background: rgb(199, 205, 208, 0.2);
+       }
+       .excel{
+        width:70px;
+        height:70px;
+        background: rgba(138, 124, 124, 0.3);
+        border-radius: 10px ;
+        margin-left: 20px;
+        display: flex;
+        margin-top: 20px;
+        box-shadow: rgb(199, 205, 208) 0 3px 14px;
+       }
+       .excel img{
+        width:60px;
+        height:60px;
+        margin-left:6px;
+       }
+       .excel p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -43px;
+        margin-top:54px;
+        font-size: 12px;
+        color:white;
+       }
+       .excel:hover{
+         background: rgb(199, 205, 208, 0.2);
+       }
+       .ppxt{
+        width: 70px;
+        height:70px;
+        background: rgba(138, 124, 124, 0.3);
+        border-radius: 10px ;
+        margin-left: 20px;
+        display: flex;
+        margin-top:20px;
+        box-shadow: rgb(199, 205, 208) 0 3px 14px;
+       }
+       .ppxt img{
+        width:60px;
+        height:60px;
+        margin-left:10px;
+        
+       }
+       .ppxt p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -50px;
+        margin-top:54px;
+        font-size: 12px;
+        color:white;
+
+       }
+       .ppxt:hover {
+        background: rgb(199, 205, 208, 0.2);
+       }
+       .word{
+        width: 70px;
+        height:70px;
+        background: rgba(138, 124, 124, 0.3);
+        border-radius: 10px ;
+        margin-left: 120px;
+        display: flex;
+        margin-top:-340px;
+        box-shadow: rgb(199, 205, 208) 0 3px 14px;
+       }
+       .word img{
+        width:60px;
+        height:60px;
+        margin-left:5px;
+       }
+       .word p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -44px;
+        margin-top:54px;
+        font-size: 12px;
+        color:white;
+
+       }
+       .kk{
+        width:200px;
+        height:2px;
+
+       }
+       .word:hover{
+        background: rgb(199, 205, 208, 0.2);
+       }
+       .chrome{
+         width: 70px;
+        height:70px;
+        background: rgba(138, 124, 124, 0.3);
+        border-radius: 10px ;
+        margin-left: 120px;
+        display: flex;
+        margin-top:20px;
+        box-shadow: rgb(199, 205, 208) 0 3px 14px;
+       }
+       .chrome img{
+        width:60px;
+        height:60px;
+        margin-left:5px;
+       }
+       .chrome p{
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -49px;
+        margin-top:54px;
+        font-size: 12px;
+        color:white;
+       }
+       .chrome:hover{
+         background: rgb(199, 205, 208, 0.2);
+       }
+       .microsoftEdge{
+        width: 70px;
+        height:70px;
+        background: rgba(138, 124, 124, 0.3);
+        border-radius: 10px ;
+        margin-left: 120px;
+        display: flex;
+        margin-top:20px;
+        box-shadow: rgb(199, 205, 208) 0 3px 14px;
+       }
+       .microsoftEdge img{
+        width:60px;
+        height:60px;
+        margin-left:5px;
+       }
+       .microsoftEdge p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: -65px;
+        margin-top:54px;
+        font-size: 12px;
+        color:white;
+       }
+       .microsoftEdge:hover{
+        background: rgb(199, 205, 208, 0.2);
+       }
+       .body_app.hide10{
+        
+        visibility: hidden;
+        opacity: 0;
+        width:100px;
+        height:20px;
+        
+
+       }
+       .btn_reset_wall{
+         margin-left: 20px;
+         width:40px;
+         height:40px;
+         border: none;
+         border-radius: 4px;
+         background: rgba(0, 0, 0, 0.7);
+         box-shadow: rgb(10, 236, 236) 0 3px 15px;
+         color:white;
+         margin-top: 5px;
+         transition: 0.2s;
+
+
+
+       }
+       .btn_reset_wall:hover{
+        background: rgba(175, 200, 218);
+        transform: scale(1.2);
+        color:black;
+       }
+
+    
+       
+       
+
+    
+        
+    </style>
+</head>
+<body>
+    <div class = "background">
+        <div class = "screen"></div>
+        <img src = "https://cdn-media.sforum.vn/storage/app/media/ctvseo_maihue/hinh-nen-1920-1080/hinh-nen-1920-1080-thumbnail.jpg">
+       
+    
+    </div>
+    <div class = "card">
+        <div class = "card_search">
+            <div class = "card_tasbar">
+                <button class = "btn_tasbar">
+                    <i class='bx bxs-ghost'></i>
+                </button>
+                <div class = "card_tasbar_body hide">
+                    <div class = "user_logo">
+                        <i class='bx bxs-user' ></i>
+                        <h2>Administrator</h2>
+                    </div>
+                    <div class = "input_search">
+                        <input class = "input_search_body" type = "text", placeholder="Enter what you are search for here">
+                        <i class='bx bx-search' ></i>
+                    </div>
+                    <div class = "system">
+                        <h2>System</h2>
+                        <div class = "setting">
+                            <i class='bx bxs-cog' ></i>
+                            <p>Settings</p>
+                        </div>
+                        <div class = "file">
+                            <i class='bx bxs-file-blank' ></i>
+                            <p>File Explore</p>
+                        </div>
+                    </div>
+                    <div class = "card_opitions">
+                        <div class = "document">
+                            <i class='bx bx-food-menu'></i>
+                            <p>document</p>
+                        </div>
+                        <div class = "Picture">
+                            <i class='bx bxs-camera-plus'></i>
+                            <p>Picture</p>
+                        </div>
+                        <div class = "music">
+                            <i class='bx bxs-music' ></i>
+                            <p>Music</p>
+                        </div>
+                    </div>
+                    
+                    <div class = "clock2">
+                        <div class = "timer_clock" id = "clock">00:00:00</div>
+                        <div class = "date_clock" id="date">Thứ ..., ngày 00/00/0000</div>
+                    </div>  
+                    
+                    
+                    
+                </div>
+            </div>
+            <div class = "card_search_main ">
+                <button class = "btn_search_main">
+                    <i class='bx bx-search' ></i>
+                </button>
+                <input class = "inp_search_main hide1" type = "text" placeholder="search...">
+            </div>
+            <div class = "icon_color_background left">
+                <button class = "btn_icon_color ">
+                    <i class='bx bxs-invader'></i>
+                </button>
+                
+                <div class = "icon_card_body hide_icon">
+                    <button class = "img1">
+                        <img src  ="https://cdn-media.sforum.vn/storage/app/media/giangnguyen/h%C3%ACnh%20n%E1%BB%81n%20m%C3%A1y%20t%C3%ADnh%20v%C3%B4%20tri/hinh-nen-may-tinh-vo-tri-thumbnail.jpg">
+                    </button>
+                    <button class = "img2">
+                        <img src = "https://cdnv2.tgdd.vn/mwg-static/common/News/1586975/hinh-nen-may-tinh-ngau-cool%20%2844%29.jpg">
+                    </button>
+                    <button type="button" class="btn_reset_wall" title="Khôi phục hình nền cũ">Mặc định</button>
+
+                </div>
+            </div>
+
+        </div>
+        <div class = "app_list">
+            <div class = "btn_open">
+                <button class = "btn_open_app">
+                    <h1>...</h1>
+                </button>
+
+            </div>
+            <div class = "body_app hide10">
+                <div class = "kk">
+
+                </div>
+                <div class = "this_pc">
+                    <img src = "https://img.icons8.com/?size=100&id=4DkF7Aqa5SO4&format=png&color=000000">
+                    <p>This PC</p>
+                </div>
+                <div class = "bin">
+                    <img src = "https://img.icons8.com/?size=100&id=1P9tb6hUxL2T&format=png&color=000000">
+                    <p>Recycle bin</p>
+                </div>
+                <div class = "excel">
+                    <img src = "https://img.icons8.com/?size=100&id=43683&format=png&color=000000">
+                    <p>Excel</p>
+                </div>
+                <div class = "ppxt">
+                    <img src = "https://img.icons8.com/?size=100&id=102775&format=png&color=000000">
+                    <p>Powpoit</p>
+                </div>
+                <div class = "word">
+                    <img src = "https://img.icons8.com/?size=100&id=48184&format=png&color=000000">
+                    <p>Word</p>
+                </div>
+                <div class = "chrome">
+                    <img src = "https://img.icons8.com/?size=100&id=43601&format=png&color=000000">
+                    <P>chrome</P>
+                </div>
+                <div class = "microsoftEdge">
+                    <img src = "https://img.icons8.com/?size=100&id=oLry165Qopkd&format=png&color=000000">
+                    <p>Microsoft Edge</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var btn_open_tasbar = document.querySelector('.btn_tasbar')
+        var tasbar = document.querySelector('.card_tasbar_body')
+        var input = document.querySelector('.inp_search_main')
+        var btn_open_input = document.querySelector('.btn_search_main')
+        var btn_img1 = document.querySelector('.img1')
+        var img1 = document.querySelector('.img1 img')
+        var card_icon = document.querySelector('.icon_card_body')
+        var btn_open_icon = document.querySelector('.btn_icon_color')
+        var img2 = document.querySelector('.img2')
+        var btn_img2 = document.querySelector('.img2')
+        var app = document.querySelector('.body_app')
+        var open_app = document.querySelector('.btn_open_app')
+        const btn_img5 = document.querySelector('.img1');
+        const mainWallpaper = document.querySelector('.background img');
+        const btn_img9 = document.querySelector('.img2')
+        const defaultWallpaperSrc = mainWallpaper ? mainWallpaper.src : '';
+        const btnResetWall = document.querySelector('.btn_reset_wall');
+
+        if (btnResetWall && mainWallpaper) {
+            btnResetWall.addEventListener('click', () => {
+              mainWallpaper.src = defaultWallpaperSrc;
+              localStorage.removeItem('os_wallpaper'); // Nếu sau này có dùng localStorage
+            });
+        }
+        
+        function changeWallpaper2() {
+            const thumb = btn_img2.querySelector('img');
+            if (mainWallpaper && thumb) {
+                mainWallpaper.src = thumb.src;
+            }
+            btn_img9.classList.remove('max');
+        }
+        btn_img9.addEventListener('click', changeWallpaper2);
+        function changeWallpaper1() {
+            const thumb = btn_img1.querySelector('img');
+            if (mainWallpaper && thumb) {
+               mainWallpaper.src = thumb.src;
+            }
+            btn_img5.classList.remove('max');
+        }
+        btn_img5.addEventListener('click', changeWallpaper1);
+        
+
+        function opentasbar(){
+            tasbar.classList.toggle('hide')
+        }
+        btn_open_tasbar.addEventListener('click', opentasbar);
+        function open_input(){
+            input.classList.toggle('hide1')
+        }
+        btn_open_input.addEventListener('click', open_input)
+        
+        
+        function open_icon_card() {
+            card_icon.classList.toggle('hide_icon')
+            
+        }
+        btn_open_icon.addEventListener('click', open_icon_card)
+        function open_app1(){
+            app.classList.toggle('hide10')
+        }
+        open_app.addEventListener('click', open_app1)
+        const daysOfWeek = [
+            "Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư",
+            "Thứ Năm", "Thứ Sáu", "Thứ Bảy"
+        ];
+
+        function updateClockAndDate() {
+            const now = new Date();
+
+            // Cập nhật giờ : phút : giây
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+
+            // Cập nhật thứ, ngày / tháng / năm
+            const dayName = daysOfWeek[now.getDay()];
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            document.getElementById('date').textContent = `${dayName}, ngày ${day}/${month}/${year}`;
+        }
+
+        updateClockAndDate();
+        setInterval(updateClockAndDate, 1000);
+
+    </script>
+</body>
+</html>
